@@ -1,0 +1,20 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: rgb(100, 220, 220);
+}
+
+.n-brand {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 38px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.n-brand:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
