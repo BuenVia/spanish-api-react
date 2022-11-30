@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateVocab from "../components/CreateVocab";
+import EdiDelete from "../components/EditDelete";
 import LastCreated from "../components/LastCreated";
+import ReadVocab from "../components/ReadVocab";
 import listOfTopics from "../listOfTopics";
 
 export default function Admin() {
@@ -31,26 +33,9 @@ export default function Admin() {
 
                 <CreateVocab listOfTopics={listOfTopics} />
                 <LastCreated latest={latestEntry} />
+                <ReadVocab listOfTopics={listOfTopics} />
+                <EdiDelete />
 
-                <div className="col-md-6 mb-3">
-                    <div className="card">
-                        <div className="card-header">
-                            <h4>Read Vocab</h4>
-                        </div>
-                        <div className="card-body"></div>
-                        <div className="card-footer"></div>
-                    </div>
-                </div>
-
-                <div className="col-md-6 mb-3">
-                    <div className="card">
-                        <div className="card-header">
-                            <h4>Edit + Delete Vocab</h4>
-                        </div>
-                        <div className="card-body"></div>
-                        <div className="card-footer"></div>
-                    </div>
-                </div>
             </div>
         </div>
     )
