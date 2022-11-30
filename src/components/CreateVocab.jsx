@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import listOfTopics from "../listOfTopics"
 
 export default function CreateVocab(props) {
 
@@ -37,12 +38,12 @@ export default function CreateVocab(props) {
         if(topic === '' || eng === '' || esp === '') {
             console.log('Plese fill in all fields')
         } else {
-            const url = 'https://buenvia-api.onrender.com/api/vocab'
+            // const url = 'https://buenvia-api.onrender.com/api/vocab'
+            const url = 'http://localhost:9000/api/vocab'
             try {
-                // axios
-                // .post(url, {/*TO BE POPULATED*/})
-                // .then(res => console.log(res))
-                console.log(newVocab)
+                axios
+                .post(url, newVocab)
+                .then(res => console.log(res))
             } catch (err) {
                 console.log(err)
             }
@@ -66,7 +67,7 @@ export default function CreateVocab(props) {
                     <select className="form-control mb-3" name="topic" onChange={handleChange}>
                         <option>--SELECT--</option>
                         {props.listOfTopics.map(topic => {
-                            return <option value={topic.name}>{topic.name}</option>
+                            return <option key={listOfTopics.indexOf(topic)} value={topic.name}>{topic.name}</option>
                         })}
                     </select>
                     <input type="text" name='esp' className='form-control mb-3' onChange={handleChange} placeholder='Spanish' value={newVocab.esp}></input>

@@ -2,18 +2,18 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-            <a class="n-brand" href="/">BuenVia API</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <nav className="navbar navbar-expand-lg navbar-light">
+            <div className="container-fluid">
+            <a className="n-brand" href="/">BuenVia API</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                <Link class="nav-link" to="/">Home</Link>
-                <Link class="nav-link" to="/documentation">Documentation</Link>
-                <Link class="nav-link" to="/topics">Topics</Link>
-                <Link class="nav-link" to="/admin">Admin</Link>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="navbar-nav">
+                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/documentation">Documentation</Link>
+                <Link className="nav-link" to="/topics">Topics</Link>
+                <Link className="nav-link" to="/admin">Admin</Link>
                 </div>
             </div>
             </div>

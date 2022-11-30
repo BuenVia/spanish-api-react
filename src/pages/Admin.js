@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateVocab from "../components/CreateVocab";
-import EdiDelete from "../components/EditDelete";
+import EditDelete from "../components/EditDelete";
 import LastCreated from "../components/LastCreated";
 import ReadVocab from "../components/ReadVocab";
 import listOfTopics from "../listOfTopics";
@@ -35,7 +35,7 @@ export default function Admin() {
                 <CreateVocab listOfTopics={listOfTopics} />
                 <LastCreated latest={latestEntry} />
                 <ReadVocab listOfTopics={listOfTopics} />
-                <EdiDelete allEntries={allEntries} />
+                <EditDelete allEntries={allEntries} />
 
             </div>
         </div>

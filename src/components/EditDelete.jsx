@@ -1,4 +1,4 @@
-export default function EdiDelete(props) {
+export default function EditDelete(props) {
     return (
         <div className="col-md-6 mb-3">
             <div className="card">
@@ -9,7 +9,7 @@ export default function EdiDelete(props) {
                     <select>
                         <option>--SELECT--</option>
                         {props.allEntries.map(entry => {
-                            return <option>{entry.topic}: {entry.eng} / {entry.esp}</option>
+                            return <option key={props.allEntries.indexOf(entry)}>{entry.topic}: {entry.eng} / {entry.esp}</option>
                         })}
                     </select>
                 </div>

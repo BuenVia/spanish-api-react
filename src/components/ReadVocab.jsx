@@ -11,7 +11,7 @@ export default function ReadVocab(props) {
                     <select>
                         <option>--SELECT--</option>
                         {listOfTopics.map(topic => {
-                            return <option>{topic.name}</option>
+                            return <option key={listOfTopics.indexOf(topic)}>{topic.name}</option>
                         })}
                     </select>
                 </div>
