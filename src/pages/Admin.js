@@ -8,7 +8,7 @@ import listOfTopics from "../listOfTopics";
 
 export default function Admin() {
 
-    const [currentListTopics, setCurrentListTopics] = useState(listOfTopics)
+    const [allEntries, setAllEntries] = useState([])
     const [latestEntry, setLatestEntry] = useState({})
 
     const getAll = async () => {
@@ -18,6 +18,7 @@ export default function Admin() {
         .then(res => {
             console.log(res.data)
             setLatestEntry(res.data[0])
+            setAllEntries(res.data)
         })
     }
 
@@ -34,7 +35,7 @@ export default function Admin() {
                 <CreateVocab listOfTopics={listOfTopics} />
                 <LastCreated latest={latestEntry} />
                 <ReadVocab listOfTopics={listOfTopics} />
-                <EdiDelete />
+                <EdiDelete allEntries={allEntries} />
 
             </div>
         </div>
