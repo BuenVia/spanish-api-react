@@ -43,7 +43,7 @@ export default function CreateVocab(props) {
             try {
                 axios
                 .post(url, newVocab)
-                .then(res => console.log(res))
+                .then(res => console.log(res.data))
             } catch (err) {
                 console.log(err)
             }

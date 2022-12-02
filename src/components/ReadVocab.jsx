@@ -1,22 +1,43 @@
+import { useState } from "react";
 import listOfTopics from "../listOfTopics";
 
 export default function ReadVocab(props) {
+
+    const [chosenVocab, setChosenVocab] = useState({})
+
+    function handleClick(e) {
+        console.log(JSON.parse(e.target.value))
+    }
+
     return (
-        <div className="col-md-6 mb-3">
+        <div className="mb-3">
             <div className="card">
                 <div className="card-header">
                     <h4>Read Vocab</h4>
                 </div>
                 <div className="card-body">
-                    <select>
-                        <option>--SELECT--</option>
-                        {listOfTopics.map(topic => {
-                            return <option key={listOfTopics.indexOf(topic)}>{topic.name}</option>
-                        })}
-                    </select>
+                    {chosenVocab && <form></form>}
+                    <table className="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>Topic</th>
+                                <th>English</th>
+                                <th>Español</th>
+                            </tr>
+                            {props.allEntries.map(entry => {
+                                return (
+                                <tr>
+                                    <td>{entry.topic}</td>
+                                    <td><button className="btn btn-info" onClick={handleClick} value={JSON.stringify(entry)}>{entry.eng}</button></td>
+                                    <td>{entry.esp}</td>
+                                </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
                 </div>
                 <div className="card-footer">
-                    <button className="btn btn-primary">Submit</button>
+
                 </div>
             </div>
         </div>
