@@ -21,16 +21,28 @@ export default function ReadVocab(props) {
         })
     }
 
+    // Sends the edited vocab to the API
     function editVocab() {
+        const url = 'http://localhost:9000'
+        try {
+            axios
+            .post(`${url}/api/vocab/update`, chosenVocab)
+            .then(res => console.log(res))
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
-        // const url = 'http://localhost:9000'
-        // try {
-        //     axios
-        //     .post(`${url}/api/vocab/update`)
-        //     .then(res => console.log(res))
-        // } catch (error) {
-        //     console.log(error)
-        // }
+    // Sends the deleted vocab to the API
+    function deleteVocab() {
+        const url = 'http://localhost:9000'
+        try {
+            axios
+            .post(`${url}/api/vocab/delete`, chosenVocab)
+            .then(res => console.log(res))
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -44,6 +56,7 @@ export default function ReadVocab(props) {
                     <div className="mb-3 g-1">
                         <form className="row mb-3">
                             <div className="col-md-4">
+                                <label className="form-label"><h6>Topic</h6></label>
                                 <select className="form-control" name="topic" onChange={handleChange}>
                                     <option value="">{chosenVocab.topic}</option>
                                     {listOfTopics.map(topic => {
@@ -52,9 +65,11 @@ export default function ReadVocab(props) {
                                 </select>
                             </div>
                             <div className="col-md-4">
+                                <label className="form-label"><h6>English</h6></label>
                                 <input type='text' name="eng" className='form-control' onChange={handleChange} value={chosenVocab.eng} />
                             </div>
                             <div className="col-md-4">
+                                <label className="form-label"><h6>Spanish</h6></label>
                                 <input type='text' name="esp" className='form-control' onChange={handleChange} value={chosenVocab.esp} />
                             </div>
                         </form>
@@ -62,7 +77,7 @@ export default function ReadVocab(props) {
                 </div>
                 <div className="card-footer">
                     <button className="btn btn-warning" onClick={editVocab}>Edit</button>
-                    <button className="btn btn-danger">Delete</button>
+                    <button className="btn btn-danger" onClick={deleteVocab}>Delete</button>
                 </div>
             </div>}
             <div className="card">

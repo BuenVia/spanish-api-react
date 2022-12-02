@@ -10,8 +10,6 @@ export default function Admin() {
     const [allEntries, setAllEntries] = useState([])
     const [latestEntry, setLatestEntry] = useState({})
 
-
-
     const getAll = async () => {
         const url = 'http://localhost:9000'
         // const url = 'https://buenvia-api.onrender.com'
