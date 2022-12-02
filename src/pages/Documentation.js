@@ -8,13 +8,13 @@ const Documentation = () => {
   const [loading, setLoading] = useState(false)
   const [documentationArr, setDocumentationArr] = useState([])
 
-  const url = 'https://buenvia-api.onrender.com/api/documentation'
-  // const url = 'http://localhost:9000/api/documentation'
+  const url = 'http://localhost:9000'
+  // const url = 'https://buenvia-api.onrender.com'
     
   const loadDocumentation = () => {
     try {
       axios
-      .get(url)
+      .get(`${url}/api/documentation`)
       .then(res => {
         setDocumentationArr(res.data)
       })

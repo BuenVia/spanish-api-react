@@ -13,9 +13,10 @@ export default function Admin() {
 
 
     const getAll = async () => {
-        const url = 'https://buenvia-api.onrender.com/api/vocab'
+        const url = 'http://localhost:9000'
+        // const url = 'https://buenvia-api.onrender.com'
         axios
-        .get(url)
+        .get(`${url}/api/vocab`)
         .then(res => {
             setLatestEntry(res.data[0])
             setAllEntries(res.data)
