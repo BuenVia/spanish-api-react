@@ -31,6 +31,8 @@ export default function ReadVocab(props) {
         } catch (error) {
             console.log(error)
         }
+        props.update()
+        setChosenVocab(false)
     }
 
     // Sends the deleted vocab to the API
@@ -47,6 +49,8 @@ export default function ReadVocab(props) {
 
     return (
         <div className="mb-3">
+            
+            {/*IF VOCAB IS SELECTED FOR EDITING, SHOW FORM*/}
             {chosenVocab && 
             <div className="card mb-3">
                 <div className="card-header">
@@ -80,6 +84,8 @@ export default function ReadVocab(props) {
                     <button className="btn btn-danger" onClick={deleteVocab}>Delete</button>
                 </div>
             </div>}
+
+            {/*FULL LIST OF VOCAB*/}
             <div className="card">
                 <div className="card-header">
                     <h4>Read Vocab</h4>
@@ -92,7 +98,7 @@ export default function ReadVocab(props) {
                                 <th>English</th>
                                 <th>Español</th>
                             </tr>
-                            {props.allEntries.map(entry => {
+                            {props.allEntries.reverse().map(entry => {
                                 return (
                                 <tr key={props.allEntries.indexOf(entry)}>
                                     <td>{entry.topic}</td>

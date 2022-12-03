@@ -4,6 +4,7 @@ import listOfTopics from "../listOfTopics"
 
 export default function CreateVocab(props) {
 
+    const [message, setMessage] = useState('')
     const [newVocab, setNewVocab] = useState({
         topic: '',
         eng: '',
@@ -36,7 +37,7 @@ export default function CreateVocab(props) {
     const sendVocab = async() => {
         const { topic, eng, esp } = newVocab
         if(topic === '' || eng === '' || esp === '') {
-            console.log('Plese fill in all fields')
+            setMessage(<p style={{color: 'red'}}>Plese fill in all fields</p>)
         } else {
             // const url = 'https://buenvia-api.onrender.com/api/vocab'
             const url = 'http://localhost:9000/api/vocab'
@@ -54,6 +55,8 @@ export default function CreateVocab(props) {
                     esp: ''
                 }
             })
+            setMessage(<p style={{color: 'green'}}>Success</p>)
+            props.update()
         }
     }
 
@@ -64,6 +67,7 @@ export default function CreateVocab(props) {
                     <h4>Create Vocab</h4>
                 </div>
                 <div className="card-body">
+                    {message}
                     <select className="form-control mb-3" name="topic" onChange={handleChange}>
                         <option>--SELECT--</option>
                         {props.listOfTopics.map(topic => {

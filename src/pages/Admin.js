@@ -16,7 +16,8 @@ export default function Admin() {
         axios
         .get(`${url}/api/vocab`)
         .then(res => {
-            setLatestEntry(res.data[0])
+            const last = res.data.length - 1
+            setLatestEntry(res.data[last])
             setAllEntries(res.data)
         })
     }
@@ -33,9 +34,9 @@ export default function Admin() {
             
             <div className="row">
 
-                <CreateVocab listOfTopics={listOfTopics} />
+                <CreateVocab listOfTopics={listOfTopics} update={getAll} />
                 <LastCreated latest={latestEntry} />
-                <ReadVocab allEntries={allEntries} />
+                <ReadVocab allEntries={allEntries} update={getAll} />
 
             </div>
         </div>
