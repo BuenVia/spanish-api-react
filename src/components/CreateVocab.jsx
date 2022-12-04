@@ -40,7 +40,6 @@ export default function CreateVocab(props) {
             setMessage(<p style={{color: 'red'}}>Plese fill in all fields</p>)
         } else {
             const url = 'https://buenvia-api.onrender.com/api/vocab'
-            // const url = 'http://localhost:9000/api/vocab'
             try {
                 axios
                 .post(url, newVocab)

@@ -23,7 +23,6 @@ export default function ReadVocab(props) {
 
     // Sends the edited vocab to the API
     function editVocab() {
-        // const url = 'http://localhost:9000'
         const url = 'https://buenvia-api.onrender.com'
         try {
             axios
@@ -38,7 +37,6 @@ export default function ReadVocab(props) {
 
     // Sends the deleted vocab to the API
     function deleteVocab() {
-        // const url = 'http://localhost:9000'
         const url = 'https://buenvia-api.onrender.com'
         try {
             axios
