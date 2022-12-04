@@ -1,34 +1,9 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import documentation from '../documentation'
 import DocsElement from "../components/DocsElement";
-import LoadingSpinner from "../components/LoadingSpinner";
 
 const Documentation = () => {
 
-  const [loading, setLoading] = useState(false)
-  const [documentationArr, setDocumentationArr] = useState([])
-
-  const url = 'http://localhost:9000'
-  // const url = 'https://buenvia-api.onrender.com'
-    
-  const loadDocumentation = () => {
-    try {
-      axios
-      .get(`${url}/api/documentation`)
-      .then(res => {
-        setDocumentationArr(res.data)
-      })
-      setLoading(true)      
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-    useEffect(() => {
-     loadDocumentation() 
-    }, [])
-
-    return (
+   return (
       
       <div>
         <h1 id="top">Documentation</h1>
@@ -38,18 +13,18 @@ const Documentation = () => {
               <h4>Contents</h4>
           </div>
           <div className="card-body">
-            {loading ? documentationArr.map(document => {
+            {/* {loading ? documentationArr.map(document => {
               return (
                 <p key={documentationArr.indexOf(document)}>
                   <a href={`#${document.slug}`}>{document.title}</a>
                 </p>)
-              }) : <LoadingSpinner />}
+              }) : <LoadingSpinner />} */}
           </div>
         </div>
 
     
 
-      {loading ? <DocsElement documents={documentationArr} /> : <LoadingSpinner />}
+      {documentation.map(doc => { return <DocsElement key={doc.id} doc={doc} /> })}
 
       </div>
       
