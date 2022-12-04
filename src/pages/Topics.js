@@ -8,8 +8,7 @@ const Topics = () => {
   const [topics, setTopics] = useState([])
 
   const getTopics = () => {
-    const url = 'http://localhost:9000'
-    // const url = 'https://buenvia-api.onrender.com'
+    const url = 'https://buenvia-api.onrender.com'
     try {
       axios
       .get(`${url}/api/topics`)
