@@ -15,8 +15,7 @@ export default function Admin() {
     const getAll = async () => {
         try {
         setTimeout(() => {
-            const url = 'http://localhost:9000'
-            // const url = 'https://buenvia-api.onrender.com'
+            const url = 'https://buenvia-api.onrender.com'
             axios
             .get(`${url}/api/vocab`)
             .then(res => {
