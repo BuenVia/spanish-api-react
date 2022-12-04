@@ -5,7 +5,7 @@ export default function DocsElement(props) {
     console.log(props);
     
     return (
-            <div className="card mb-3">
+            <div className="card mb-3" id={props.doc.title}>
                 <div className="card-header">
                     <h6>{props.doc.title}</h6>
                 </div>

@@ -13,12 +13,11 @@ const Documentation = () => {
               <h4>Contents</h4>
           </div>
           <div className="card-body">
-            {/* {loading ? documentationArr.map(document => {
+            {documentation.map(document => {
               return (
-                <p key={documentationArr.indexOf(document)}>
-                  <a href={`#${document.slug}`}>{document.title}</a>
-                </p>)
-              }) : <LoadingSpinner />} */}
+                <p key={document.id}>
+                  <a href={`#${document.title}`}>{document.title}</a>
+                </p>) })} 
           </div>
         </div>
 
