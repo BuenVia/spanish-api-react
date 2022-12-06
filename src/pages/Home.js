@@ -41,6 +41,7 @@ export default function Home() {
                     <p>Please find contact details and a list of other projects at <a href="https://mjclifford.com" target="_blank" rel="noopener noreferrer">mjclifford.com</a>.</p>
                 </div>
             </div>
+
         </div>
     )
 }

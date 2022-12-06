@@ -1,21 +1,17 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import LoadingSpinner from "../components/LoadingSpinner";
+import axios from "axios";
 
 const Topics = () => {
 
-  const [loading, setLoading] = useState(false)
   const [topics, setTopics] = useState([])
 
+  const url = 'https://buenvia-api.onrender.com/api/topics'
+  
   const getTopics = () => {
-    const url = 'https://buenvia-api.onrender.com'
     try {
       axios
-      .get(`${url}/api/topics`)
-      .then(res => {
-        setTopics(res.data)
-      }) 
-      setLoading(true)
+      .get(url)
+      .then(res => setTopics(res.data)) 
     } catch (error) {
       console.log(error)
     }
@@ -26,8 +22,10 @@ const Topics = () => {
   }, [])
 
     return (
-    <div>
-      <h1>Topics</h1>
+      <div>
+
+
+        <h1>Topics</h1>
 
         <div className="card">
           <div className="card-header">
@@ -35,9 +33,10 @@ const Topics = () => {
           </div>
           <div className="card-body">
 
-            {loading ? 
+
               <table className="table table-striped">
                 <tbody>
+
                   <tr>
                     <td>Total number of vocabs</td>
                     <td></td>
@@ -46,12 +45,9 @@ const Topics = () => {
                     <th>Topic</th>
                     <th>No. of Vocabs</th>
                   </tr>
-                    {topics.map(topic => {return <tr key={topics.indexOf(topic)}><td>{topic.name}</td><td>{topic.count}</td></tr>})}
+                  {topics.map(topic => {return <tr key={topics.indexOf(topic)}><td>{topic.name}</td><td>{topic.count}</td></tr>})}
                 </tbody>
               </table>
-              : 
-              <LoadingSpinner />}
-
           </div>
         </div>
       </div>   

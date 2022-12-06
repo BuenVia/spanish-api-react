@@ -17,12 +17,12 @@ export default function CreateVocab(props) {
             if(name === 'esp') {
                 return {
                     ...prevVals,
-                    esp: value
+                    esp: value.toLowerCase()
                 }
             } else if(name === 'eng') {
                 return {
                     ...prevVals,
-                    eng: value
+                    eng: value.toLowerCase()
                 }
             } else if(name === 'topic') {
                 return {
