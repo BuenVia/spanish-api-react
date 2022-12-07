@@ -18,3 +18,11 @@
 .n-brand:hover {
     color: rgba(255, 255, 255, 0.8);
 }
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
