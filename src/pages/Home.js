@@ -19,6 +19,7 @@ export default function Home() {
                 </div>
                 <div className="card-body">
                     <p>Please visit the <a href="/documentation">Documentation</a> page for further information on endpoints.</p>
+                    <h6>Please note that the API is hosted on on the free package at <a href="https://render.com" target='__blank'>Render.com</a> and can take up to 30 seconds to load on first use.</h6>
                 </div>
             </div>
 

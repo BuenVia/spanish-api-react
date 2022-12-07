@@ -5,6 +5,7 @@ import LastCreated from "../components/LastCreated";
 import ReadVocab from "../components/ReadVocab";
 import listOfTopics from "../listOfTopics";
 import LoadingSpinner from '../components/LoadingSpinner'
+import Topics from "../components/Topics";
 
 export default function Admin() {
 
@@ -43,6 +44,7 @@ export default function Admin() {
             {loading ?             <div className="row">
                 <CreateVocab listOfTopics={listOfTopics} update={getAll} />
                 <LastCreated latest={latestEntry} />
+                <Topics />
                 <ReadVocab allEntries={allEntries} update={getAll} />
             </div> : <LoadingSpinner /> }
         </div>

@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const Topics = () => {
 
+  const [loading, setLoading] = useState(false)
   const [topics, setTopics] = useState([])
 
   const url = 'https://buenvia-api.onrender.com/api/topics'
-  
+
   const getTopics = () => {
     try {
       axios
       .get(url)
-      .then(res => setTopics(res.data)) 
+      .then(res => {
+        console.log(res.data)
+        setTopics(res.data)
+      })
+      .finally(
+        setLoading(true)
+      )
     } catch (error) {
       console.log(error)
     }
@@ -21,11 +29,9 @@ const Topics = () => {
     getTopics()
   }, [])
 
+
     return (
-      <div>
-
-
-        <h1>Topics</h1>
+      <div className="mb-3">
 
         <div className="card">
           <div className="card-header">
@@ -33,8 +39,8 @@ const Topics = () => {
           </div>
           <div className="card-body">
 
-
-              <table className="table table-striped">
+            {loading ?
+                <table className="table table-striped">
                 <tbody>
 
                   <tr>
@@ -48,6 +54,8 @@ const Topics = () => {
                   {topics.map(topic => {return <tr key={topics.indexOf(topic)}><td>{topic.name}</td><td>{topic.count}</td></tr>})}
                 </tbody>
               </table>
+            : <LoadingSpinner />}
+
           </div>
         </div>
       </div>   
