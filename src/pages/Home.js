@@ -8,8 +8,8 @@ export default function Home() {
                     <h4>What is the BuenVia API?</h4>
                 </div>
                 <div className="card-body">
-                    <p>The BuenVia API returns a translated Spanish / English vocabulary of thousands of words.</p>
-                    <p>The words are broken down in to categeories such as 'Colors' or 'Animals' or 'Sport'. Their primary use is as a vocabulary repository for a future Spanish language app.</p>
+                    <p>The BuenVia API returns a translated Spanish / English vocabulary of numerous words.</p>
+                    <p>The words are broken down in to categeories such as 'Colors' or 'Days' or 'Numbers'. Their primary use is as a vocabulary repository for a future Spanish language app.</p>
                 </div>
             </div>
 
