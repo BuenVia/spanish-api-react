@@ -13,6 +13,10 @@ const Documentation = () => {
               <h4>Contents</h4>
           </div>
           <div className="card-body">
+
+            <p>URL: <code>https://buenvia-api.onrender.com</code></p>
+            <p>Please use the above URL with one of the following endpoints.</p>
+
             {documentation.map(document => {
               return (
                 <p key={document.id}>
